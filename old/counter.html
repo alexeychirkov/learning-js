@@ -1,0 +1,29 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <button id="button" onclick="my()">Click</button>
+    <input type="text" name="" id="input"/>
+</body>
+<script>
+    let counter = 0;
+    const myButton = document.getElementById("button");
+    function my() {
+        counter++;
+        changeButton(counter)
+        changeInput("Summa = "+ counter)
+        console.log("counter=", counter);
+    }
+
+    function changeButton(text) {
+        myButton.innerText = text
+    }
+    function changeInput(text){
+        document.getElementById("input").value = text
+    }
+
+</script>
+
+</html>

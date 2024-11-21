@@ -1,0 +1,67 @@
+<html>
+
+<body>
+    <input value="100" type="text" id="calc1" placeholder="First Number">
+    <input value="+" type="text" id="calculation">
+    <input value="100" type="text" id="calc2" placeholder="Second Number">
+    <button onclick="calculate()">=</button>
+    <input type="text" id="result" placeholder="Result">
+
+
+
+
+
+
+
+
+    <script>
+        function getById(id) {
+            return document.getElementById(id);
+        }
+    </script>
+
+    <script>
+        const calc1 = getById("calc1")
+        const calculation = getById("calculation")
+        const calc2 = getById("calc2")
+        const result = getById("result")
+        function calculate() {
+            let numOne = parseInt(calc1.value);
+
+            let operation = calculation.value;
+
+            let numTwo = parseInt(calc2.value);
+
+            let b = "Invalid Operation"
+            if (operation === "+") {
+                b = numOne + numTwo;
+            }
+            else if (operation === "-") {
+                b = numOne - numTwo;
+            } else if (operation === "*") {
+                b = numOne * numTwo;
+            } else if (operation === "/") {
+                b = numOne / numTwo;
+            }
+            let isResultValid = isFinite(b);
+            let isNumOneValid = isFinite(numOne)
+            let isNumTwoValid = isFinite(numTwo)
+            if (isResultValid) {
+                result.value = b
+            } else if (isNumOneValid === false) {
+                result.value = "Invalid Number"
+            } else if (isNumTwoValid === false) {
+                result.value = "Invalid Number"
+            } else {
+                result.value = "Invalid Operation"
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

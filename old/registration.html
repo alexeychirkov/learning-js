@@ -1,0 +1,40 @@
+<html>
+
+<body>
+    <input type="text" placeholder="Имя пользователя" id="username">
+    <input type="password" placeholder="Пароль" id="passwordId">
+    <input type="password" placeholder="Подтвердите пароль" id="passwordConfirm">
+    <button onclick="registrateFu()">Зарегистрироваться</button>
+</body>
+<script>
+    function getById(id) {
+        return document.getElementById(id);
+    }
+    function getValue(id2) {
+        let element = getById(id2);
+        return element.value;
+    }
+</script>
+
+
+<script>
+    function registrateFu() {
+        let username = getValue("username")
+        let password = getValue("passwordId")
+        let passwordConfirm = getValue("passwordConfirm")
+
+        let usernameNotEmpty = username.length !== 0;
+
+        let passwordLengthOk = password.length >= 8;
+        let passwordMatch = password === passwordConfirm;
+        let passwordIsOk = passwordLengthOk === true && passwordMatch === true
+
+        if (usernameNotEmpty === true && passwordIsOk === true) {
+            console.log("Ok");
+        } else {
+            console.log("Fail");
+        }
+    }
+</script>
+
+</html>

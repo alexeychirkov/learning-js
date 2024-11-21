@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <input type="text" placeholder="Username" id="username">
+    <input type="number" min="0" max="150" id="age">
+    <input type="text" placeholder="Email" id="email">
+    <button onclick="registrateFu()">Зарегистрироваться</button>
+</body>
+<script>
+    function getById(id) {
+        return document.getElementById(id);
+    }
+    function getValue(id2) {
+        let element = getById(id2);
+        return element.value;
+    }
+</script>
+
+
+<script>
+    function registrateFu() {
+        let username = getValue("username")
+        let age = getValue("age")
+        let email = getValue("email")
+        let ageNum = parseInt(age)
+
+        let usernameIsOK = username.length > 2;
+        let ageIsOk = isFinite(ageNum) && ageNum <= 120 && ageNum >= 14;
+        let emailIsOk = email.includes("@");
+
+        if (usernameIsOK === true && ageIsOk === true && emailIsOk === true) {
+            console.log("OK");
+        } else {
+            console.log("Error");
+        }
+
+
+    }
+</script>
+
+</html>

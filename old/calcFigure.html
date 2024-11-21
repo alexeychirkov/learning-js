@@ -1,0 +1,44 @@
+<html>
+
+<head></head>
+
+<body>
+    <input id="length" type="text" placeholder="length" value="1">
+    <input id="width" type="text" placeholder="width" value="1">
+    <button onclick="calcul()">Calculate</button>
+
+    <script>
+        function getById(id) {
+            return document.getElementById(id);
+        }
+    </script>
+
+
+
+    <script>
+        const lengthEl = getById("length")
+        const widthEl = getById("width")
+        function calcul() {
+            let length = parseInt(lengthEl.value)
+            let width = parseInt(widthEl.value)
+            let b = "Введите числовые значения для ширины или длины"
+            let lenFinite = isFinite(length)
+            let widFinite = isFinite(width)
+            let isOk = false;
+            if (lenFinite === true) {
+                if (widFinite === true) {
+                    let result1 = length * width
+                    let result2 = 2 * (length + width)
+                    console.log("area=", result1);
+                    console.log("perimetr=", result2);
+                    isOk = true
+                }
+            }
+            if (isOk === false) {
+                console.log(b)
+            }
+        }
+    </script>
+</body>
+
+</html>

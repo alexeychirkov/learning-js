@@ -1,0 +1,31 @@
+<html>
+
+<body>
+    <button onclick="generateNumbers()">Generate</button>
+</body>
+<script>
+    function getById(id) {
+        return document.getElementById(id);
+    }
+    function getValue(id2) {
+        let element = getById(id2);
+        return element.value;
+    }
+    function randomNumber(from, to) {
+        return Math.floor(Math.random() * to) + from
+    }
+</script>
+
+
+<script>
+    function generateNumbers() {
+        let num = 1
+        while (num < 90) {
+            num = randomNumber(1, 100);
+            console.log("b", num);
+        }
+        // console.log("b",index);
+    }
+</script>
+
+</html>

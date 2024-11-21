@@ -1,0 +1,53 @@
+<html>
+
+<body>
+    <button onclick="">run</button>
+</body>
+<script>
+    function getById(id) {
+        return document.getElementById(id);
+    }
+    function getValue(id2) {
+        let element = getById(id2);
+        return element.value;
+    }
+    function randomNumber(from, to) {
+        return Math.floor(Math.random() * to) + from
+    }
+</script>
+
+
+<script>
+    // function func(name1) {
+    //    if (name1 === undefined || name1 === "") {
+    //      console.log("Hello, guess");
+    //    } else {
+    //     console.log("Hello,", name1);
+    //    }
+    // };
+
+
+    // func();
+    // func("");
+    // func("Anna");
+
+    function sumNum(a,b) {
+        let sum = a + b;
+        console.log(sum);
+
+        function ddd() {
+            sum1 = 1;
+            console.log("!!!",sum);
+        }
+        ddd();
+
+        console.log("===",sum);
+    }
+    sumNum(3,2)
+    // sumNum(9)
+    // sumNum()
+    // console.log("???",sum);
+    
+</script>
+
+</html>

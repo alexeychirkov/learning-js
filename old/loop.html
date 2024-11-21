@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <button onclick="runCycles()">Start loop</button>
+</body>
+<script>
+    function getById(id) {
+        return document.getElementById(id);
+    }
+    function getValue(id2) {
+        let element = getById(id2);
+        return element.value;
+    }
+</script>
+
+
+<script>
+    function runCycles() {
+        for (let index = 1; index < 20; index++) {
+            if (index % 4 === 0) {
+                console.log("1)", index);
+                break
+            }
+        }
+        for (let index2 = 1; index2 <= 20; index2++) {
+            if (index2 % 3 === 0) {
+                continue
+            }
+            console.log("2)", index2);
+        }
+        for (let index3 = 10; index3 >= 1; index3--) {
+                console.log("3)", index3);
+            }
+    }
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <input type="text" placeholder="Username" id="username">
+    <input type="number" min="0" max="150" id="age">
+    <button onclick="registrateFu()">Check Acsess</button>
+</body>
+<script>
+    function getById(id) {
+        return document.getElementById(id);
+    }
+    function getValue(id2) {
+        let element = getById(id2);
+        return element.value;
+    }
+</script>
+
+
+<script>
+    function registrateFu() {
+        let username = getValue("username")
+        let age = getValue("age")
+        let ageNum = parseInt(age)
+
+        let ageIsOk = ageNum >= 18
+        let usernameIsOK = username === "Admin"
+
+        if (ageIsOk === true || usernameIsOK === true) {
+            console.log("OK");
+        } else {
+            console.log("Error");
+        }
+
+
+    }
+</script>
+
+</html>

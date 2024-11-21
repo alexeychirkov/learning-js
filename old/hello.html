@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <button onclick="sayHello(6)">Say hello</button>
+</body>
+<script>
+    function getById(id) {
+        return document.getElementById(id);
+    }
+    function getValue(id2) {
+        let element = getById(id2);
+        return element.value;
+    }
+</script>
+
+
+<script>
+    function sayHello(n) {
+        console.log("n",n);
+        for (let index = 0; index < n; index = index + 1) {
+            if (index % 2 === 0) {
+                console.log("четное",index);
+            } else {
+                console.log("нечетное",index);
+            }
+
+        }
+
+    }
+</script>
+
+</html>
