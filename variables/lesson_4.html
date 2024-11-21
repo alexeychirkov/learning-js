@@ -1,7 +1,17 @@
 <!DOCTYPE html>
+
 <body>
     <script>
-        // Напиши свой код здесь
+        function weirdBehavior() {
+            x = 5;
+            function changeX() {
+                var x = 10;
+            }
+            changeX()
+        }
+        weirdBehavior()
+        console.log(x);
     </script>
 </body>
+
 </html>
