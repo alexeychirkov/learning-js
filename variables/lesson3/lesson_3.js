@@ -1,3 +1,4 @@
+
 function createMultiplier(multiplier) {
     return function (x) {
         return x * multiplier;
