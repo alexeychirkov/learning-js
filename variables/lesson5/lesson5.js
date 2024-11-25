@@ -8,4 +8,10 @@
 
 Цель: Понять, как локальная переменная с тем же именем «скрывает» глобальную внутри функции.
  */
-console.log(3);
+message = "Global Message"
+function showMessage() {
+	let message = "Local Message"
+	console.log(message);
+}
+console.log(message);
+

@@ -12,3 +12,20 @@
 
 Цель: Увидеть, как функции могут изменять глобальные переменные.
  */
+score = 0;
+function updateScore(points) {
+	score += points
+}
+function resetScore() {
+	score = 0
+}
+updateScore(10);
+console.log(score);
+updateScore(10);
+console.log(score);
+updateScore(10);
+console.log(score);
+updateScore(10);
+console.log(score);
+resetScore();
+console.log(score);
