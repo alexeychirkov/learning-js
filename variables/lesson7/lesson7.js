@@ -50,7 +50,7 @@
  gameOver = false;
 
 function increaseScore(points) {
-    if (gameOver) return;
+    if (gameOver === true) return;
     
     score += points;
     console.log("Очки: " , score);
@@ -62,7 +62,7 @@ function increaseScore(points) {
 }
 
 function loseLife() {
-    if (gameOver) return; 
+    if (gameOver === true) return; 
     
     lives -= 1;
     console.log("Осталось жизней: " , lives);
