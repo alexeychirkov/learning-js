@@ -50,3 +50,91 @@
         6.2. Попрактиковаться в создании новых массивов и объектов из исходного массива.
         6.3. Использовать сложные условия для подсчётов и анализа.
 */
+function getRandomNumber(from, to) {
+    return Math.floor(Math.random() * to) + from
+}
+let temperatures = []
+for (let index = 0; index < 7; index++) {
+    temperatures.push(getRandomNumber(-20, 40))
+}
+console.log(temperatures)
+function findColdestDays() {
+    let coldestDay = temperatures[0]
+    for (let index = 1; index < temperatures.length; index++) {
+        if (temperatures[index] < coldestDay) {
+            coldestDay = temperatures[index]
+        }
+    }
+    let coldest = []
+    for (let index = 1; index < temperatures.length; index++) {
+        if (temperatures[index] === coldestDay) {
+            coldest.push(index)
+        }
+    }
+    console.log("Самая низкая температура ",coldestDay,"°C наблюдалась в дни:",coldest," ");
+    
+}
+findColdestDays()
+function findHottestDays() {
+    let hottestDay = temperatures[0]
+    for (let index = 1; index < temperatures.length; index++) {
+        if (temperatures[index] > hottestDay) {
+            hottestDay = temperatures[index]
+        }
+    }
+    let hottest = []
+    for (let index = 1; index < temperatures.length; index++) {
+        if (temperatures[index] === hottestDay) {
+            hottest.push(index)
+        }
+    }
+    console.log("Самая высокая температура ",hottestDay,"°C наблюдалась в дни:",hottest," ");
+}
+findHottestDays()
+function calculateRange() {
+    let minTemp = temperatures[0];
+    let maxTemp = temperatures[0];
+
+    for (let i = 0; i < temperatures.length; i++) {
+        if (temperatures[i] < minTemp) {
+            minTemp = temperatures[i];
+        }
+        if (temperatures[i] > maxTemp) {
+            maxTemp = temperatures[i];
+        }
+    }
+
+    const range = maxTemp - minTemp;
+    console.log("Диапазон температуры: от ",minTemp,"°C до ",maxTemp,"°C. Разница: ",range,"°C");
+    return range
+}
+calculateRange()
+function countInRange(min,max) {
+    let count = 0 
+    for (let index = 0; index < temperatures.length; index++) {
+       if (temperatures[index] >= min && temperatures[index] <= max) {
+        count++
+       }
+    }
+    console.log("Температура была в диапазоне от ",min,"°C до ",max,"°C в ",count," дней");
+}
+countInRange(-5,10)
+function classifyTemperatures() {
+    let coldDays = 0
+    let coolDays = 0
+    let warmDays = 0
+    let hotDays = 0
+    for (let index = 0; index < temperatures.length; index++) {
+         if (temperatures[index] < 0) {
+            coldDays++
+         } else if (temperatures[index] >= 0 && temperatures[index] <= 15) {
+            coolDays++
+         } else if (temperatures[index] >= 16 && temperatures[index] <= 25) {
+            warmDays++
+         } else {
+            hotDays++
+         }
+    }
+    console.log("Холодных дней: ",coldDays,", Прохладных дней: ",coolDays,", Тёплых дней: ",warmDays,", Жарких дней: ",hotDays,"");
+}
+classifyTemperatures()
